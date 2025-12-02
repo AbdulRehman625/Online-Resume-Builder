@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeBuilder - Craft Your Professional Resume</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000080",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar Component -->
+<div class="w-full bg-primary backdrop-blur-sm sticky top-0 z-50">
+<div class="max-w-6xl mx-auto">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-white px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="text-primary">
+<svg class="w-7 h-7" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">ResumeBuilder</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white hover:text-slate-300 text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-white hover:text-slate-300 text-sm font-medium leading-normal" href="Templet.html">Templates</a>
+<a class="text-white hover:text-slate-300 text-sm font-medium leading-normal" href="feature.html">Features</a>
+<a class="text-white hover:text-slate-300 text-sm font-medium leading-normal" href="Home.html">About us</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate"> <a href="login.html">Log In</a></span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate"><a href="signup.html" > SIGN Up </a></span>
+</button>
+</div>
+</div>
+<div class="md:hidden">
+<button class="text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+</div>
+</div>
+<main class="flex-1">
+<!-- HeroSection Component -->
+<div class="px-4 py-16 md:py-24">
+<div class="max-w-6xl mx-auto @container">
+<div class="flex flex-col gap-10 @[864px]:flex-row-reverse @[864px]:items-center">
+<div class="flex-1">
+<div class="w-full bg-slate-200 dark:bg-slate-800 aspect-[4/3] bg-cover rounded-xl" data-alt="A polished, professional resume template shown on a screen." style='background-image: url("assets/images/mirani.jpg"); background-position: center;'></div>
+</div>
+<div class="flex flex-col gap-6 text-center @[864px]:text-left @[864px]:items-start @[864px]:justify-center flex-1">
+<div class="flex flex-col gap-4">
+<h1 class="text-slate-900 dark:text-slate-50 text-4xl font-black leading-tight tracking-tighter @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight">Craft a Job-Winning Resume in Minutes.</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal @[480px]:text-lg">Our intuitive builder and professional templates help you stand out to recruiters.</p>
+</div>
+<button class="flex self-center @[864px]:self-start w-fit cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate"><a href="resume.html"> Lets Create My Resume Now </a></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Proof Section -->
+<div class="py-12 bg-white dark:bg-background-dark/50">
+<div class="max-w-5xl mx-auto px-4">
+<p class="text-center text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-8">Trusted by professionals at top companies</p>
+<div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-x-12 opacity-60">
+<img alt="Google logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgqjZAqrzd3TJniNYuFF66O9nynFlwV137xWiWgNokC87vLcQL5rrHYERNadGMRrw6YIJMwvssiye2HeY_G05VCwZbZTDzaqCaVs5pM7lVwleCRlzeWyPDhDZYGKvNoChxvZkm7MkpQcP1aFf4RNXXjeAXsXezJf8Afs08Ja684SUMRs13CfFtx0M-i-VbBXem4ChLSXvNhE5P4SkvWqTN6A3m3jTEcd4f6-zn3fPhm9Je0U34fR8Fnbh8JZC4DXicrSmKlB7Dfgc"/>
+<img alt="Amazon logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwX2YNuGVg4fjKInHc1lbVVg8AdVg5_IWpi9uRkjCkAN2Wj7FB-6_G2uF5WR6rs3Zw2TG6_IbckhyqKzNCVFDKs6DkZStGF1AUrYOHV82aaRcFlmq-_n-JDuz0K3XPKc7sxdlC_s4AYbO8HTZEUfkVRf9yoIyU5QeteUVqiPwIRI1U0dIaRWskEm5omzCnLbUV7I_lplHAaqeoH_LMl1GKam8g1iOvtJL_u5zkm5CA0G3pmf_LUQx4EjPZ47gAzr6-2BOq9ITVQV8"/>
+<img alt="Netflix logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIx51gquKNoTPCqgPaigv23x4OqWgjPUYELZV4bv50YVlwwzXbP0A8zJkeK3WsX8OJ49ovUHFuJ-FgPP5pST5FJ0Etr-8NYd18JsafrIJvkfD-H4LbdvU8ib4m2al0hqPMqaCLQOCJNjNYXltW1_9kv0YKOl5cJJmAdo7m97jsq_GZVG7ZzjWxtrJ0gsUAz1ZIr_axI_dkOx6hIeUWQqGWYzp_et3HyoLhB4K5cP0C81oEAoZn_Hz0rbNIj12fXhylSZ26olYxqu4"/>
+<img alt="Salesforce logo" class="h-7" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwPE46DkGg7rgU01aGHybcrH4WuvtQt0OXNaPPR3mvgEKQdw83Dbx_RxQFth7MB92ZwOSeYczyjTbqdyWSM87h-nNUahKY7qTv5WP6SNAQEw_bImdt5cksF2Dw6tOfEL2Wg24Pw7sL83k5EtdOf3sWhhyWrGTqkktY0GnIRgvPIKt9kAXQhgOeeJZbk6ibeQYL68wIYDkF67dNUb8maYxyzTqAN84TPr2QK6sM1kRjA0despypxqbZSekF5_Xq1mHiyYmIAaomu2I"/>
+<img alt="Microsoft logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO2IY9lFi5CLA18d_ioaohOyneolZkFbf9JLPAUUc6OESdJVkVjwWo3Q8qN4Vo2W0MGXSX8d87OLoi1yj7AjLfU0gicozMSjFy1iI7_YCdf6qPJen_nIs1_39IVr-9umz9DmBrKav1NmJVyk5sR3oT0RbWHxaJML45xxQN3IxapNp07_zyV8B2dJxfEy5QzHmoLHzNJMFqXeJjppir4iSX5-3zukrWH3U4Yt898rZ2_Kh_ZfPOAwrZ4B1MrnF3WSLajCgkRrnUwYo"/>
+<img alt="Visa logo" class="h-7" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmIrI8xZk3u2Qq9HNLyB5CTqmWZSZX1_DvR-xFpNDc3tTKP_LEUFQZB6o8SfJIDf7G-jSRNi9Eg5KUCB_aXHxyiSn4u_V0rRdq07KboXPNMqqJjZB8iaPTGmd4Ze1TgmOSp63b8AMwHn9VdVPMEbXbQ6czE9nG0eF-Nzo-R0-tIAe7hm21252joQpGzaydH_GhigGlmC1WnXL5vO6j9Aa2lzmAbwKK7SfZnMNFerXBGZb5wqSTqb6Svf6BY6hgX899sYjjNyKR6h0"/>
+</div>
+</div>
+</div>
+<!-- FeatureSection Component -->
+<div class="px-4 py-16 md:py-24">
+<div class="max-w-6xl mx-auto flex flex-col gap-10 @container">
+<div class="flex flex-col gap-4 text-center">
+<h2 class="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black">Why Our Resume Builder?</h2>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal max-w-2xl mx-auto">Everything you need to create a standout resume that gets you hired.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 flex-col text-center items-center">
+<div class="text-primary bg-primary/10 rounded-full p-3 mb-2">
+<span class="material-symbols-outlined" style="font-size: 32px;">layers</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">Professional Templates</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Choose from a variety of designer-made templates proven to get past recruiter screening.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 flex-col text-center items-center">
+<div class="text-primary bg-primary/10 rounded-full p-3 mb-2">
+<span class="material-symbols-outlined" style="font-size: 32px;">tune</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">Easy Customization</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Easily tailor fonts, colors, and layouts with a real-time preview of your changes.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 flex-col text-center items-center">
+<div class="text-primary bg-primary/10 rounded-full p-3 mb-2">
+<span class="material-symbols-outlined" style="font-size: 32px;">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">AI-Powered Suggestions</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Get smart, AI-powered suggestions to optimize your content and make your resume shine.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- How It Works Section -->
+<div class="px-4 py-16 md:py-24 bg-white dark:bg-background-dark/50">
+<div class="max-w-6xl mx-auto flex flex-col gap-10 items-center">
+<div class="flex flex-col gap-4 text-center">
+<h2 class="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black">How It Works in 3 Simple Steps</h2>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal max-w-2xl mx-auto">Creating your professional resume is easier than ever.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl pt-8">
+<div class="flex flex-col items-center text-center gap-4 relative">
+<div class="absolute top-8 left-1/2 w-full border-t-2 border-dashed border-slate-300 dark:border-slate-700 hidden md:block"></div>
+<div class="relative bg-white dark:bg-slate-900 z-10">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary border-4 border-white dark:border-slate-900 text-2xl font-bold">1</div>
+</div>
+<h3 class="text-slate-900 dark:text-slate-50 text-lg font-bold">Select a Template</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Pick a template that matches your style and industry.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 relative">
+<div class="absolute top-8 left-0 w-full border-t-2 border-dashed border-slate-300 dark:border-slate-700 hidden md:block"></div>
+<div class="relative bg-white dark:bg-slate-900 z-10">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary border-4 border-white dark:border-slate-900 text-2xl font-bold">2</div>
+</div>
+<h3 class="text-slate-900 dark:text-slate-50 text-lg font-bold">Fill in Your Details</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Use our intuitive editor to add your experience and skills.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 relative">
+<div class="relative bg-white dark:bg-slate-900 z-10">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary border-4 border-white dark:border-slate-900 text-2xl font-bold">3</div>
+</div>
+<h3 class="text-slate-900 dark:text-slate-50 text-lg font-bold">Download &amp; Apply</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Export your resume as a PDF and start applying for jobs.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonials Section -->
+<div class="px-4 py-16 md:py-24">
+<div class="max-w-6xl mx-auto flex flex-col gap-10 items-center">
+<div class="flex flex-col gap-4 text-center">
+<h2 class="text-slate-900 dark:text-slate-50 tracking-tight text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black">Success Stories from Our Users</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+<div class="flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+<p class="text-slate-700 dark:text-slate-300">"This builder made the daunting task of creating a resume so simple. I landed my dream job in tech within a month!"</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Photo of Sarah L." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1qJ6uyz2_2JNpwdU6X0Wkle2yBaCF9fda-97-KROXOu6zINGkMdsY4FCslEoef1_lp70dS_GOmMU8YGayrVlfgO78HslEcRilm8DfoV_0NYbMNjTrZ8eeRjbevQOXx1yA4JQVam-9LF562FGhjmYjxrwtqp_tfBTjmYiNt_fsujaFX_bgv2f70-UWVzVjKP8XRHER1CBqNnTI5W_hLCwExC_emlPCTgfMUcbzv4p7NkitIrJ4AljSKMS0v7ysPa7NyDubdueIoyY"/>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-50">Sarah L.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Software Engineer</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+<p class="text-slate-700 dark:text-slate-300">"The templates are modern and professional. I received multiple compliments on my resume's design during interviews."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Photo of Michael P." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOSWiOUSUeN-qJwe9AsOxRGJkozB-sM-p-1O3rGv5pJMCn2otITJj_nVxLqygXF8vsjFq8VT54-sFbrGifQxe6LB5XQaNfjdVkBJKvtKXEQGvOWMZ709_ZRWANgatIw0kEdCOLVsS-F3ld_oKIPWNdB-G-zljHGzqDJ_Hqtgt70h4vwmJu_Kfm0ielFn0nZQzQ1RdEATEvOJTdLDhvG1x6cMBES21ZjCVsyiTQG0QH5nlcvPwHo1rEBD2oRSs6S__TgaX0z6S7q4M"/>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-50">Michael P.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Marketing Manager</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+<p class="text-slate-700 dark:text-slate-300">"As a recent graduate, I had no idea where to start. The AI suggestions were a lifesaver for crafting my experience section."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Photo of Jessica Y." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHY43p4xYu32rlYjUcUCNlk9X42rcEcJCdbSzUDTAPM2J6Uf2cN6NLNDpD40R1qGp5zgdL7IDYXol8IzzG76R1ffOduLmCSEeEhe-45jJHOL0Rm1UezDTqOZ0c6UuqbUggqbHAeXe1_c6PagT2UAWv6bIoe_Gza2Lby_z-zPcu70eScrrX5R9Pk2ldwfaiBVNBpq7V3dc1blnV6ompEwLB_dseQt1_KWYHlxj-oQfY5Z84hf23v7jIu0JvPpainrJdogfz6AOOx7A"/>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-50">Jessica Y.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Junior Graphic Designer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Final CTA Section -->
+<div class="px-4 py-16 md:py-24">
+<div class="max-w-4xl mx-auto rounded-xl bg-primary/90 text-center p-10 md:p-16">
+<div class="flex flex-col gap-6 items-center">
+<h2 class="text-white text-3xl font-black tracking-tight leading-tight md:text-4xl">Ready to Build Your Future?</h2>
+<p class="text-white/80 text-base md:text-lg max-w-xl">Join thousands of successful professionals. Create a resume that opens doors to new opportunities—for free.</p>
+<button class="flex w-fit cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white text-primary text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Start for Free</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-6xl mx-auto px-4 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+<div class="col-span-2 lg:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-3 text-slate-900 dark:text-slate-50">
+<div class="text-primary">
+<svg class="w-7 h-7" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight">ResumeBuilder</h2>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-sm text-slate-900 dark:text-slate-50">PRODUCT</h3>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">Templates</a>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">Features</a>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">Pricing</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-sm text-slate-900 dark:text-slate-50">COMPANY</h3>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">About Us</a>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">Blog</a>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-sm text-slate-900 dark:text-slate-50">LEGAL</h3>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">Terms of Service</a>
+<a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-sm text-slate-900 dark:text-slate-50">FOLLOW US</h3>
+<div class="flex gap-4">
+<!-- Social Icons would go here -->
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z"></path></svg>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.178-1.336.23-2.029.183.606 1.922 2.36 3.256 4.491 3.295-1.789 1.407-4.039 2.16-6.402 2.055.578 4.516 4.966 7.135 9.898 7.028 5.438-1.259 8.24-6.425 7.643-11.854.932-.672 1.74-1.512 2.384-2.482z"></path></svg>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 mt-8 pt-6 text-center text-sm text-slate-500 dark:text-slate-400">
+<p>© 2024 ResumeBuilder. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

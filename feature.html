@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeBuilder - Features</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f0f4ff;
+        }
+
+        /* PAGE TITLE */
+        .header {
+            background: #001a73;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        /* FEATURES SECTION */
+        #features {
+            padding: 60px;
+        }
+
+        #features h2 {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 700;
+            color: #001a73;
+            margin-bottom: 40px;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .feature-box img {
+            width: 70px;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #0028d0;
+        }
+
+        .feature-box p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGE HEADER -->
+    <div class="header">
+        <h1>Our Features</h1>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+
+        <h2>What Makes Our Resume Builder Powerful</h2>
+
+        <div class="features-container">
+
+            <div class="feature-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                <h3>AI-Powered Resume Suggestions</h3>
+                <p>Improve your resume automatically with intelligent AI wording and grammar correction.</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png">
+                <h3>Multiple Modern Templates</h3>
+                <p>Select from creative, modern, and classic templates designed by professionals.</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828874.png">
+                <h3>Instant PDF & Word Export</h3>
+                <p>Download your resume instantly in high-quality PDF or Word format.</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/892/892781.png">
+                <h3>Automatic Formatting</h3>
+                <p>No need to adjust spacing or alignment—everything formats itself perfectly.</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png">
+                <h3>Live Preview</h3>
+                <p>See changes in real time as you type and customize your resume instantly.</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png">
+                <h3>Secure Cloud Save</h3>
+                <p>Save your resume in the cloud and access it anytime from any device.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

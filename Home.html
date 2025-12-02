@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Rehman - Web Developer</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f7fc;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .hero {
+        background: linear-gradient(to right, #002366, #004aad);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 50px 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        margin-top: -50px;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Left Side (Profile) */
+    .profile {
+        flex: 1 1 25%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .profile img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 4px solid #004aad;
+    }
+
+    .profile h2 {
+        font-size: 1.4rem;
+        color: #004aad;
+        margin-bottom: 5px;
+    }
+
+    .profile p {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .profile nav {
+        margin-top: 20px;
+    }
+
+    .profile nav a {
+        display: block;
+        color: #004aad;
+        text-decoration: none;
+        margin: 6px 0;
+        transition: 0.3s;
+    }
+
+    .profile nav a:hover {
+        color: #111;
+        transform: translateX(4px);
+    }
+
+    /* Right Side (About Info) */
+    .about {
+        flex: 1 1 70%;
+    }
+
+    .about h2 {
+        color: #004aad;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #004aad;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .about p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    /* Skill Bars */
+    .skills {
+        margin-top: 20px;
+    }
+
+    .skill {
+        margin-bottom: 15px;
+    }
+
+    .skill-title {
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .skill-bar {
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .skill-fill {
+        height: 10px;
+        background: linear-gradient(to right, #004aad, #00aaff);
+        border-radius: 5px;
+        width: 0;
+        transition: width 1s ease-in-out;
+    }
+
+    /* Animation on Load */
+    body.loaded .skill-fill {
+        width: var(--skill-level);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .about h2 {
+            text-align: center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Hi, My Name is <strong>Abdul Rehman</strong></h1>
+    <p>I create modern, responsive websites and digital experiences with clean design and smooth performance.</p>
+</section>
+
+<!-- Main Container -->
+<div class="container">
+    <!-- Left Profile Section -->
+    <div class="profile">
+        <img src="/assets/images/rehman.jpg" alt="Abdul Rehman">
+        <h2>Abdul Rehman</h2>
+        <p>Computer Science Student</p>
+        <p>Web Developer</p>
+
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Experience</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Right About Section -->
+    <div class="about">
+        <h2>About Me</h2>
+        <p>
+            I am Abdul Rehman, a Computer Science student and passionate web developer with a focus on front-end design and functionality.
+            I specialize in creating user-centered web interfaces using HTML, CSS, JavaScript, and React. My goal is to deliver modern, interactive, and visually appealing websites that provide seamless user experiences.
+        </p>
+        <p>
+            Besides coding, I enjoy UI/UX design, exploring new technologies, and learning how design and development merge to create impactful digital solutions.
+            I’m currently expanding my skills in full-stack web development and software engineering.
+        </p>
+
+        <!-- Skills -->
+        <div class="skills">
+            <div class="skill" style="--skill-level: 90%;">
+                <div class="skill-title">HTML / CSS</div>
+                <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill" style="--skill-level: 85%;">
+                <div class="skill-title">JavaScript</div>
+                <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill" style="--skill-level: 75%;">
+                <div class="skill-title">React</div>
+                <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill" style="--skill-level: 70%;">
+                <div class="skill-title">Node.js</div>
+                <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill" style="--skill-level: 80%;">
+                <div class="skill-title">UI/UX Design</div>
+                <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Trigger animation after load
+    window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+    });
+</script>
+
+</body>
+</html>

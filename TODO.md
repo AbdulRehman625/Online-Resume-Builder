@@ -1,0 +1,3 @@
+- [x] Update signup.html for dark mode
+- [x] Update login.html for dark mode
+- [ ] Test the changes

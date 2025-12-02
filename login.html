@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login | Resume Builder</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* UPDATED BACKGROUND AND COLORS TO MATCH PROJECT */
+        body {
+            height: 100vh;
+            background: linear-gradient(180deg, #eaf6ff 0%, #f6f9fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* REMOVE DARK OVERLAY */
+        body::before {
+            content: none;
+        }
+
+        /* UPDATED CONTAINER BACKGROUND AND BORDER */
+        .container {
+            width: 900px;
+            height: 550px;
+            display: flex;
+            z-index: 10;
+            background: linear-gradient(180deg, rgba(45,45,45,0.98), rgba(30,30,30,0.95));
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            /* removed blur and shadow for consistency */
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* LEFT SIDE */
+    .left {
+        flex: 1;
+        background: #f0f0f0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #1e2532;
+    }
+
+    .left img {
+        width: 85%;
+        margin-bottom: 25px;
+        filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
+        animation: float 4s infinite ease-in-out;
+    }
+
+    @keyframes float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .left h2 {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        font-weight: 500;
+        /* remove text shadow for clarity */
+        text-shadow: none;
+    }
+
+    /* RIGHT SIDE LOGIN */
+    .right {
+        flex: 1;
+        padding: 55px 50px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .right h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(0,0,0,0.1);
+        background: #fff;
+        color: #1e2532;
+        font-size: 0.95rem;
+        outline: none;
+        /* removed blur */
+        backdrop-filter: none;
+    }
+
+    input::placeholder {
+        color: #cccccc;
+    }
+
+    .password-wrapper {
+        position: relative;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+
+    .login-btn {
+        background: linear-gradient(135deg, #90e0ef, #48cae4);
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: #003049;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+
+    .login-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(255,255,255,0.4);
+    }
+
+    .signup {
+        text-align: center;
+        margin-top: 15px;
+        color: #cccccc;
+    }
+
+    .signup a {
+        color: #4a90e2;
+        font-weight: 600;
+    }
+
+    @media (max-width: 850px) {
+        .container {
+            flex-direction: column;
+            height: auto;
+            width: 90%;
+        }
+        .left {
+            display: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE WITH PRO ILLUSTRATION + QUOTE -->
+    <div class="left">
+        <img src="assets/images/dublin-resume-templates.avif" />
+
+        <h2>
+            “Your resume is the first chapter of your success story —  
+            let's make it powerful and professional.”
+        </h2>
+    </div>
+
+    <!-- RIGHT LOGIN FORM -->
+    <div class="right">
+        <h1>Login</h1>
+
+        <input id="email" type="email" placeholder="Email Address" required>
+
+        <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword()">👁</span>
+        </div>
+
+        <button id="login-btn" class="login-btn">Login</button>
+        <div id="login-msg" style="margin-top:10px;color:#1e2532;font-weight:600"></div>
+
+
+        <p class="signup">Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+
+</div>
+
+<!-- storage helpers -->
+<script src="assets/js/store-the-data.js"></script>
+<script>
+document.getElementById('login-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const msg = document.getElementById('login-msg');
+
+    if (!email || !password) {
+        msg.innerText = 'Please enter your email and password.';
+        return;
+    }
+
+    const result = StoreData.authenticate(email, password);
+    if (!result.ok) {
+        msg.innerText = result.error || 'Login failed';
+        return;
+    }
+
+    msg.style.color = '#1e2532';
+    msg.innerText = 'Login successful — redirecting...';
+    // redirect to resume page
+    setTimeout(() => window.location.href = 'resume.html', 700);
+});
+
+function togglePassword() {
+    const pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+// (debug UI removed)
+</script>
+
+</body>
+</html>
